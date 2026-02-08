@@ -12,7 +12,7 @@ class Report:
 
     def read_files(self, paths):
         rows = []
-
+        headers = []
         for path in paths:
             path = path_normalizer(path)
 
@@ -30,8 +30,12 @@ class Report:
             except Exception:
                 print('Ошибка чтения файла')
                 continue
-        self.headers = headers
-        self.rows = rows
+        if headers and rows:
+            self.headers = headers
+            self.rows = rows
+        else:
+            self.headers = []
+            self.rows = []
 
     def sort_report(self, ind_key, reverse=False):
         if not self.rows:
