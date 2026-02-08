@@ -41,7 +41,6 @@ python  python script.py --files 'csv_files\economic1.csv' 'csv_files\economic2.
 ## Тесты
 
 ```bash
-pytest tests/ -v
-pytest tests/ --cov=reports --cov=utils --cov-report=term-missing
+python -m pytest tests/ --cov
 ```
 
